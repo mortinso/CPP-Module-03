@@ -7,8 +7,8 @@ SRC_DIR = src
 INC_DIR = inc
 OBJ_DIR = .obj
 
-SRC_FILES = main.cpp ClapTrap.cpp
-INC_FILES = ClapTrap.hpp
+SRC_FILES = main.cpp ClapTrap.cpp ScavTrap.cpp
+INC_FILES = ClapTrap.hpp ScavTrap.hpp
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 HDRS = $(addprefix $(INC_DIR)/, $(INC_FILES))

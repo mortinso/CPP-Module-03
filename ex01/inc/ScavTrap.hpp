@@ -1,47 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 13:30:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/29 12:25:19 by mortins-         ###   ########.fr       */
+/*   Created: 2024/05/29 11:48:23 by mortins-          #+#    #+#             */
+/*   Updated: 2024/05/29 12:26:07 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
+# include "ClapTrap.hpp"
 
-class ClapTrap {
-	protected:
-		std::string	name;
-		int			health;
-		int			energy;
-		int			damage;
+class ScavTrap : ClapTrap {
+	private:
 
-		ClapTrap( void );
 	public:
 		// Constructors
-		ClapTrap( const ClapTrap &claptrap );
-		ClapTrap( const std::string &_name );
+		ScavTrap( void );
+		ScavTrap( const ScavTrap &scavtrap );
 
 		// Destructor
-		~ClapTrap( void );
+		~ScavTrap( void );
 
 		// Copy assignment operator
-		ClapTrap&	operator = ( const ClapTrap &claptrap );
+		ScavTrap & operator = ( const ScavTrap &scavtrap );
 
 		// Getter
 
 		// Setter
 
 		// Methods
-		void	attack( const std::string& target );
-		void	takeDamage( unsigned int amount );
-		void	beRepaired( unsigned int amount );
 };
 
 #endif
