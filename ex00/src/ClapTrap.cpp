@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/28 16:30:39 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/29 10:51:09 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap( void ) {
 }
 
 ClapTrap::ClapTrap( const std::string &_name ) : name(_name) , health(10) , energy(10), damage(0){
-	std::cout << "Name constructor called" <<std::endl;
+	std::cout << _name <<": constructor called" <<std::endl;
 }
 
 // Copy constructor
