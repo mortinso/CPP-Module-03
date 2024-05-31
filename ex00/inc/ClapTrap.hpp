@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 16:22:14 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:16:45 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ class ClapTrap {
 		int			getHealth( void );
 		int			getEnergy( void );
 		int			getDamage( void );
-
-		// Setter
 
 		// Methods
 		void	showStats( void );
