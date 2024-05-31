@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 15:39:17 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/28 16:32:49 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:14:22 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,54 +15,34 @@
 
 int	main(void) {
 	{
-		std::cout << "\e[90m\e[107mEnergy loss test:\e[0m" << std::endl;
+		// Tests if jim can attack/repair without energy
+		std::cout << INVERT << "Energy loss test:" << RESET << std::endl;
 
 		ClapTrap jim("Jim");
 
-		// Spend all energy points
 		for (int i = 0; i < 10; i++)
 			jim.attack("someone");
 
-		// Try attacking
-		jim.attack("Bob");
-
-		// Try repairing
+		jim.showStats();
+		jim.attack("someone");
 		jim.beRepaired(1);
 	}
-	std::cout << std::endl << std::endl;
 	{
-		std::cout << "\e[90m\e[107mDeath test:\e[0m" << std::endl;
+		// Tests if 'takeDamage()' works and if ClapTrap can attack/repair when it's dead
+		std::cout << std::endl << INVERT << "Death test:" << RESET << std::endl;
 		ClapTrap bob("Bob");
 
-		// Take 1 damage 3 times
-		for (int i = 0; i < 3; i++)
-			bob.takeDamage(1);
-
-		// Kill
-		bob.takeDamage(7);
-
-		// Try attacking
+		bob.takeDamage(bob.getHealth());
+		bob.showStats();
 		bob.attack("someone");
-
-		// Try repairing
 		bob.beRepaired(1);
 	}
-	std::cout << std::endl << std::endl;
 	{
-		std::cout << "\e[90m\e[107mRepair test:\e[0m" << std::endl;
+		// Tests if the 'beRepaired()' function works
+		std::cout << std::endl << INVERT << "Repair test:" << RESET << std::endl;
 		ClapTrap guy("Guy");
 
-		// Guy takes 5 damage
-		guy.takeDamage(5);
-
-		// Creates Jack from Guy
-		ClapTrap jack(guy);
-
-		// Jack repairs 1 HP 5 times
-		for (int i = 0; i < 5; i++)
-			jack.beRepaired(1);
-
-		// Guy heals for 20
 		guy.beRepaired(20);
+		guy.showStats();
 	}
 }
