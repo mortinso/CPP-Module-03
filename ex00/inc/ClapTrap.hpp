@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/28 16:30:28 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 14:49:43 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class ClapTrap {
 		int			energy;
 		int			damage;
 
-		ClapTrap( void );
 	public:
 		// Constructors
+		ClapTrap( void );
 		ClapTrap( const ClapTrap &claptrap );
 		ClapTrap( const std::string &_name );
 
@@ -35,10 +35,12 @@ class ClapTrap {
 		ClapTrap&	operator = ( const ClapTrap &claptrap );
 
 		// Getter
+		std::string getName( void );
 
 		// Setter
 
 		// Methods
+		void	showStats(void);
 		void	attack( const std::string& target );
 		void	takeDamage( unsigned int amount );
 		void	beRepaired( unsigned int amount );

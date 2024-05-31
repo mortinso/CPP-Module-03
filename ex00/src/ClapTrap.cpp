@@ -6,14 +6,14 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/29 10:51:09 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 14:49:53 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ClapTrap.hpp"
 
 // Default constructor
-ClapTrap::ClapTrap( void ) {
+ClapTrap::ClapTrap( void ) : name("null"), health(10), energy(10), damage(0) {
 	std::cout << "Default constructor called" <<std::endl;
 }
 
@@ -45,6 +45,17 @@ ClapTrap&	ClapTrap::operator = ( const ClapTrap &claptrap ) {
 	return (*this);
 }
 
+// Getter for name
+std::string ClapTrap::getName( void ) {
+	return this->name;
+}
+
+// Show ClapTraps stats
+void ClapTrap::showStats(void)
+{
+    std::cout << "ClapTrap " << this->name << " has " << this->health  << " HP, " << this->energy 
+        << " energy and deals " << this->damage << " damage." << std::endl;
+}
 
 void	ClapTrap::attack(const std::string& target) {
 	if (!this->health)
