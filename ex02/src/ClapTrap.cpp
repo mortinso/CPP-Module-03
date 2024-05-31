@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 17:14:50 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 18:17:45 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,14 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	else
 	{
 		std::cout << "ClapTrap " << name << " takes " << amount << " damage points! ";
-		if (amount - health <= 0)
+		if ((int)amount >= health)
 		{
 			health = 0;
 			std::cout << RED << name << " died!" << RESET << std::endl;
 		}
 		else
 		{
-			health -= amount;
+			health -= (int)amount;
 			std::cout << "It now has " << health << " HP!" << std::endl;
 		}
 	}
@@ -114,7 +114,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << YELLOW << "ClapTrap " << name << " is too tired to repair." << RESET << std::endl;
 	else
 	{
-		health += amount;
+		health += (int)amount;
 		energy--;
 		std::cout << GREEN << "ClapTrap " << name << " repairs " << amount << " HP! It now has " << health << " HP."  << RESET << std::endl;
 	}
