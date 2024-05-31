@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:48:23 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 17:00:13 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:16:51 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class ScavTrap : public ClapTrap {
 		ScavTrap&	operator = ( const ScavTrap &scavtrap );
 
 		// Methods
+		void	showStats( void );
 		void	attack( const std::string& target );
 		void	guardGate( void );
 };

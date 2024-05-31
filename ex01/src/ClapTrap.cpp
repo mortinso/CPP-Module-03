@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 16:29:35 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:14:50 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ClapTrap::getDamage( void ) {
 // --------------------------------------------------Methods--------------------------------------------------
 // Shows ClapTrap's stats
 void	ClapTrap::showStats(void) {
-	std::cout << "ClapTrap has " << health  << " HP, " << energy << " energy and " << damage << " damage points" << std::endl;
+	std::cout << "ClapTrap " << name << " has " << health  << " HP, " << energy << " energy and " << damage << " damage points" << std::endl;
 }
 
 // Attacks target

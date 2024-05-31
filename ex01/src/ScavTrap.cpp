@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:48:28 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 16:51:03 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:18:52 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ ScavTrap&	ScavTrap::operator = ( const ScavTrap &scavtrap ) {
 	return (*this);
 }
 
+// --------------------------------------------------Methods--------------------------------------------------
+// Shows ScavTrap's stats
+void	ScavTrap::showStats(void) {
+	std::cout << SCAV << name << " has " << health  << " HP, " << energy << " energy and " << damage << " damage points" << std::endl;
+}
+
 // ScavTrap attack function
 void	ScavTrap::attack(const std::string& target) {
 	if (!health)
@@ -59,6 +65,7 @@ void	ScavTrap::attack(const std::string& target) {
 	}
 }
 
+// ScavTrap enters guardGate mode
 void	ScavTrap::guardGate( void ) {
-	std::cout << SCAV << name << " is now guarding the gate." << std::endl;
+	std::cout << SCAV << name << " is now in Gate keeper mode." << std::endl;
 }
