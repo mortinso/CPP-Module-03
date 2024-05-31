@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 15:25:38 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:41:52 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ class ClapTrap {
 		ClapTrap&	operator = ( const ClapTrap &claptrap );
 
 		// Getter
-		std::string getName( void );
+		std::string	getName( void );
+		int			getDamage( void );
 
 		// Setter
 
