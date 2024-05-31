@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 15:33:21 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:47:51 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,23 @@ ClapTrap&	ClapTrap::operator = ( const ClapTrap &claptrap ) {
 	return (*this);
 }
 
+// --------------------------------------------------Getters--------------------------------------------------
 // Getter for name
-std::string	ClapTrap::getName( void ) {
+std::string ClapTrap::getName( void ) {
 	return name;
 }
 
-// Show ClapTrap's stats
-void	ClapTrap::showStats(void)
-{
-	std::cout << "ClapTrap " << name << " has " << health  << " HP, " << energy << " energy and deals " << damage << " damage." << std::endl;
+int	ClapTrap::getDamage( void ) {
+	return damage;
 }
 
+// --------------------------------------------------Methods--------------------------------------------------
+// Shows ClapTrap's stats
+void	ClapTrap::showStats(void) {
+	std::cout << "ClapTrap " << name << " has " << health  << " HP, " << energy << " energy and " << damage << " damage points." << std::endl;
+}
+
+// Attacks target
 void	ClapTrap::attack(const std::string& target) {
 	if (!health)
 		std::cout << "ClapTrap " << name << " is dead." << std::endl;
@@ -69,6 +75,7 @@ void	ClapTrap::attack(const std::string& target) {
 	}
 }
 
+// Takes 'amount' points of damage
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (!health)
 		std::cout << "ClapTrap " << name << " is dead." << std::endl;
@@ -90,6 +97,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	}
 }
 
+// Heals ClapTrap for 'amount' points
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (!health)
 		std::cout << "ClapTrap " << name << " is dead." << std::endl;
