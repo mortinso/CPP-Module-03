@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:12 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 15:51:27 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:48:36 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
+
+// Colors
+# define RED "\e[91m"
+# define GREEN "\e[92m"
+# define YELLOW "\e[93m"
+# define INVERT "\e[90m\e[107m"
+# define RESET "\e[0m"
 
 class ClapTrap {
 	protected:
@@ -36,6 +43,8 @@ class ClapTrap {
 
 		// Getter
 		std::string	getName( void );
+		int			getHealth( void );
+		int			getEnergy( void );
 		int			getDamage( void );
 
 		// Setter

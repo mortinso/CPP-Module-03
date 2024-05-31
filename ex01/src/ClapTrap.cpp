@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 15:47:51 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:29:35 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,17 @@ std::string ClapTrap::getName( void ) {
 	return name;
 }
 
+// Getter for damage
+int	ClapTrap::getHealth( void ) {
+	return health;
+}
+
+// Getter for damage
+int	ClapTrap::getEnergy( void ) {
+	return energy;
+}
+
+// Getter for damage
 int	ClapTrap::getDamage( void ) {
 	return damage;
 }
@@ -59,15 +70,15 @@ int	ClapTrap::getDamage( void ) {
 // --------------------------------------------------Methods--------------------------------------------------
 // Shows ClapTrap's stats
 void	ClapTrap::showStats(void) {
-	std::cout << "ClapTrap " << name << " has " << health  << " HP, " << energy << " energy and " << damage << " damage points." << std::endl;
+	std::cout << "ClapTrap has " << health  << " HP, " << energy << " energy and " << damage << " damage points" << std::endl;
 }
 
 // Attacks target
 void	ClapTrap::attack(const std::string& target) {
 	if (!health)
-		std::cout << "ClapTrap " << name << " is dead." << std::endl;
+		std::cout << RED << "ClapTrap " << name << " is dead." << RESET << std::endl;
 	else if (!energy)
-		std::cout << "ClapTrap " << name << " is too tired to attack " << target << "." << std::endl;
+		std::cout << YELLOW << "ClapTrap " << name << " is too tired to attack " << target << RESET << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << name << " attacks " << target << " for " << damage << " damage points!" << std::endl;
@@ -78,21 +89,19 @@ void	ClapTrap::attack(const std::string& target) {
 // Takes 'amount' points of damage
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (!health)
-		std::cout << "ClapTrap " << name << " is dead." << std::endl;
-	else if (!energy)
-		std::cout << "ClapTrap " << name << " is too tired to attack." << std::endl;
+		std::cout << RED << "ClapTrap " << name << " is already dead." << RESET << std::endl;
 	else
 	{
 		std::cout << "ClapTrap " << name << " takes " << amount << " damage points! ";
 		if (amount - health <= 0)
 		{
 			health = 0;
-			std::cout <<  "It died!" << std::endl;
+			std::cout << RED << name << " died!" << RESET << std::endl;
 		}
 		else
 		{
 			health -= amount;
-			std::cout <<  "It now has " << health << " HP!" << std::endl;
+			std::cout << "It now has " << health << " HP!" << std::endl;
 		}
 	}
 }
@@ -100,13 +109,13 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 // Heals ClapTrap for 'amount' points
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (!health)
-		std::cout << "ClapTrap " << name << " is dead." << std::endl;
+		std::cout << RED << "ClapTrap " << name << " is dead." << RESET << std::endl;
 	else if (!energy)
-		std::cout << "ClapTrap " << name << " is too tired! Can't repair." << std::endl;
+		std::cout << YELLOW << "ClapTrap " << name << " is too tired to repair." << RESET << std::endl;
 	else
 	{
 		health += amount;
 		energy--;
-		std::cout << "ClapTrap " << name << " repairs " << amount << " HP! It now has " << health << " HP." << std::endl;
+		std::cout << GREEN << "ClapTrap " << name << " repairs " << amount << " HP! It now has " << health << " HP."  << RESET << std::endl;
 	}
 }

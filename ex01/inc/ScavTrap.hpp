@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:48:23 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 15:36:16 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:00:13 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap {
+# define SCAV "\e[95mScavTrap \e[0m"
+
+class ScavTrap : public ClapTrap {
 	public:
 		// Constructors
 		ScavTrap( void );
