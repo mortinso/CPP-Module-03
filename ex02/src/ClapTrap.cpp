@@ -6,7 +6,7 @@
 /*   By: mortins- <mortins-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:30:07 by mortins-          #+#    #+#             */
-/*   Updated: 2024/05/31 18:17:45 by mortins-         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:17:59 by mortins-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap( const ClapTrap &claptrap ) {
 	*this = claptrap;
 }
 
-// Destructor called
+// Destructor
 ClapTrap::~ClapTrap( void ) {
 	std::cout << "ClapTrap " << name << " destructor called" <<std::endl;
 }
@@ -52,12 +52,12 @@ std::string ClapTrap::getName( void ) {
 	return name;
 }
 
-// Getter for damage
+// Getter for health
 int	ClapTrap::getHealth( void ) {
 	return health;
 }
 
-// Getter for damage
+// Getter for energy
 int	ClapTrap::getEnergy( void ) {
 	return energy;
 }
